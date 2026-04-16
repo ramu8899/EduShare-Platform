@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusSaathi | Academic Resource Sharing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <span class="brand-mark">CS</span>
+        <div>
+          <p class="brand-subtitle">CampusSaathi</p>
+          <strong>Academic Resource Network</strong>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span id="accountStatus" class="account-status">Guest</span>
+        <button id="authBtn" class="button button-secondary">Login / Signup</button>
+        <button id="logoutBtn" class="button button-secondary hidden">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Knowledge Sharing</span>
+          <h1>Discover, Share, and Rank Academic Resources</h1>
+          <p>Upload notes, tutorials, and reference materials by subject and topic. Use smart search and ranking to find the best study material faster.</p>
+          <div class="hero-chips">
+            <div><strong>100+</strong> Resources</div>
+            <div><strong>10+</strong> Subjects</div>
+            <div><strong>Fast</strong> Search</div>
+          </div>
+        </div>
+        <div class="hero-visual card">
+          <h2>Upload a new resource</h2>
+          <p>Share your notes with classmates and keep content organized.</p>
+        </div>
+      </section>
+
+      <section class="grid-panel">
+        <article class="card card-panel" id="uploadSection">
+          <div class="panel-header">
+            <div>
+              <p class="panel-eyebrow">Upload</p>
+              <h2>Share a resource</h2>
+            </div>
+          </div>
+          <form id="uploadForm" enctype="multipart/form-data">
+            <div class="field-row">
+              <input type="text" id="title" placeholder="Resource title" required>
+              <input type="text" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="field-row">
+              <input type="text" id="topic" placeholder="Topic" required>
+              <input type="file" id="file" required>
+            </div>
+            <textarea id="description" placeholder="Add a short description"></textarea>
+            <button type="submit" class="button button-primary">Upload Resource</button>
+          </form>
+        </article>
+
+        <article class="card card-panel" id="searchSection">
+          <div class="panel-header">
+            <div>
+              <p class="panel-eyebrow">Search</p>
+              <h2>Find relevant material</h2>
+            </div>
+          </div>
+          <div class="field-row search-row">
+            <input type="text" id="search" placeholder="Search by title">
+            <button id="searchBtn" class="button button-primary">Search</button>
+          </div>
+          <div class="field-row">
+            <select id="subjectFilter">
+              <option value="">All Subjects</option>
+            </select>
+            <select id="topicFilter">
+              <option value="">All Topics</option>
+            </select>
+          </div>
+        </article>
+      </section>
+
+      <section class="card" id="resourcesSection">
+        <div class="panel-header">
+          <div>
+            <p class="panel-eyebrow">Library</p>
+            <h2>Available resources</h2>
+          </div>
+        </div>
+        <div id="resourcesList" class="resources-grid"></div>
+      </section>
+    </main>
+
+    <div id="loginSection" class="modal hidden">
+      <div class="modal-panel card">
+        <div class="modal-header">
+          <div>
+            <h2 id="modalTitle">Login to CampusSaathi</h2>
+            <p class="status-text" id="loginMessage"></p>
+          </div>
+          <button id="closeLogin" class="close-button">×</button>
+        </div>
+        <div class="auth-tabs">
+          <button id="loginTab" class="tab active">Login</button>
+          <button id="signupTab" class="tab">Signup</button>
+        </div>
+        <form id="loginForm" class="auth-form">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password (min 8 chars)" required>
+          <button type="submit" class="button button-primary">Login</button>
+        </form>
+        <form id="signupForm" class="auth-form hidden">
+          <input type="text" id="name" placeholder="Full name" required>
+          <input type="email" id="signupEmail" placeholder="Email" required>
+          <input type="password" id="signupPassword" placeholder="Password (min 8 chars)" required>
+          <button type="submit" class="button button-primary">Create account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
